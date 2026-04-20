@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <title>Mohd Asri Omar | Portfolio</title>
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Theme Config -->
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -17,16 +22,23 @@
     }
   </script>
 </head>
-<body class="bg-gray-950 text-white font-sans">
+
+<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-white transition-colors duration-300">
 
   <!-- Navbar -->
-  <header class="fixed w-full bg-gray-950/70 backdrop-blur z-50">
+  <header class="fixed w-full bg-white/70 dark:bg-gray-950/70 backdrop-blur z-50">
     <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
-      <h1 class="text-xl font-bold">MyPortfolio</h1>
-      <div class="space-x-6 hidden md:block">
-        <a href="#about" class="hover:text-primary">About</a>
-        <a href="#projects" class="hover:text-primary">Projects</a>
-        <a href="#contact" class="hover:text-primary">Contact</a>
+      <h1 class="font-bold">Asri Omar</h1>
+
+      <div class="hidden md:flex gap-6 items-center">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+
+        <!-- Theme Toggle -->
+        <button onclick="toggleTheme()" class="border px-3 py-1 rounded-lg">
+          🌙
+        </button>
       </div>
     </nav>
   </header>
@@ -35,66 +47,118 @@
   <section class="min-h-screen flex items-center justify-center text-center px-6">
     <div>
       <h2 class="text-4xl md:text-6xl font-bold mb-4">
-        Hi, I'm <span class="text-primary">Your Name</span>
+        Mohd Asri Omar
       </h2>
-      <p class="text-gray-400 max-w-xl mx-auto mb-6">
-        A modern web developer building clean, responsive, and user-friendly applications.
+      <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mb-6">
+        Web Developer & Front-End Engineer with 10+ years IT experience. Passionate about building modern, responsive UI and exploring AI-powered development.
       </p>
-      <a href="#projects" class="bg-primary px-6 py-3 rounded-full hover:scale-105 transition">
-        View Work
-      </a>
+      <div class="flex justify-center gap-4">
+        <a href="https://github.com/asriomar" target="_blank" class="bg-primary px-6 py-3 rounded-full text-white">GitHub</a>
+        <a href="https://www.linkedin.com/in/mohd-asri-13044a188/" target="_blank" class="border px-6 py-3 rounded-full">LinkedIn</a>
+      </div>
     </div>
   </section>
 
   <!-- About -->
   <section id="about" class="py-20 px-6 max-w-5xl mx-auto">
     <h3 class="text-3xl font-bold mb-6">About Me</h3>
-    <p class="text-gray-400 leading-relaxed">
-      I'm a passionate developer specializing in building modern web applications using React, Node.js, and Tailwind CSS. I focus on performance, clean design, and user experience.
+    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+      Passionate Web Developer transitioning from Senior Technical Support with over 10 years of IT experience. Skilled in React, Angular, Tailwind CSS, and backend technologies like Node.js and PostgreSQL. Focused on building clean, scalable, and user-friendly applications.
     </p>
   </section>
 
+  <!-- Skills -->
+  <section class="py-20 px-6 bg-gray-100 dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-3xl font-bold mb-10">Skills</h3>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h4 class="font-semibold mb-2">Frontend</h4>
+          <p class="text-gray-600 dark:text-gray-400">HTML, CSS, JavaScript, React, Angular, Tailwind, Bootstrap</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-2">Backend</h4>
+          <p class="text-gray-600 dark:text-gray-400">Node.js, Express, PostgreSQL, MySQL</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-2">Tools</h4>
+          <p class="text-gray-600 dark:text-gray-400">Git, GitHub, VSCode, LM Studio, Ollama, n8n</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects -->
-  <section id="projects" class="py-20 px-6 bg-gray-900">
+  <section id="projects" class="py-20 px-6">
     <div class="max-w-6xl mx-auto">
       <h3 class="text-3xl font-bold mb-10">Projects</h3>
+
       <div class="grid md:grid-cols-3 gap-8">
 
-        <div class="bg-gray-800 p-6 rounded-2xl hover:scale-105 transition">
-          <h4 class="text-xl font-semibold mb-2">Project One</h4>
-          <p class="text-gray-400 mb-4">Short description of your project.</p>
-          <a href="#" class="text-primary">View Project →</a>
+        <div class="p-6 border rounded-2xl hover:scale-105 transition">
+          <h4 class="text-xl font-semibold mb-2">Portfolio Website</h4>
+          <p class="text-gray-500">React + Tailwind portfolio with dark/light theme.</p>
         </div>
 
-        <div class="bg-gray-800 p-6 rounded-2xl hover:scale-105 transition">
-          <h4 class="text-xl font-semibold mb-2">Project Two</h4>
-          <p class="text-gray-400 mb-4">Short description of your project.</p>
-          <a href="#" class="text-primary">View Project →</a>
+        <div class="p-6 border rounded-2xl hover:scale-105 transition">
+          <h4 class="text-xl font-semibold mb-2">AI Summarizer</h4>
+          <p class="text-gray-500">Multi-agent AI summarizer using LM Studio.</p>
         </div>
 
-        <div class="bg-gray-800 p-6 rounded-2xl hover:scale-105 transition">
-          <h4 class="text-xl font-semibold mb-2">Project Three</h4>
-          <p class="text-gray-400 mb-4">Short description of your project.</p>
-          <a href="#" class="text-primary">View Project →</a>
+        <div class="p-6 border rounded-2xl hover:scale-105 transition">
+          <h4 class="text-xl font-semibold mb-2">Pizza Delivery App</h4>
+          <p class="text-gray-500">Responsive food ordering UI with cart logic.</p>
         </div>
 
       </div>
     </div>
   </section>
 
+  <!-- Experience -->
+  <section class="py-20 px-6 bg-gray-100 dark:bg-gray-900">
+    <div class="max-w-5xl mx-auto">
+      <h3 class="text-3xl font-bold mb-10">Experience</h3>
+
+      <div class="space-y-6">
+        <div>
+          <h4 class="font-semibold">Team Leader - MHNexus (2024–2025)</h4>
+          <p class="text-gray-600 dark:text-gray-400">Led BBIS system operations and improvements nationwide.</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold">Senior Technical Support (2018–2024)</h4>
+          <p class="text-gray-600 dark:text-gray-400">Enhanced system reliability and UI/UX improvements.</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold">IT Lecturer (2011–2018)</h4>
+          <p class="text-gray-600 dark:text-gray-400">Delivered IT courses and mentored students.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact -->
-  <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center">
-    <h3 class="text-3xl font-bold mb-6">Contact Me</h3>
-    <p class="text-gray-400 mb-6">Have a project in mind? Let's work together.</p>
-    <a href="mailto:youremail@example.com" class="bg-primary px-6 py-3 rounded-full hover:scale-105 transition">
-      Send Email
-    </a>
+  <section id="contact" class="py-20 px-6 text-center">
+    <h3 class="text-3xl font-bold mb-6">Contact</h3>
+    <p class="text-gray-600 dark:text-gray-400 mb-4">mohdasriomar84@gmail.com</p>
+    <p class="text-gray-600 dark:text-gray-400">+6013-9687050</p>
   </section>
 
   <!-- Footer -->
   <footer class="py-6 text-center text-gray-500 text-sm">
-    © 2026 Your Name. All rights reserved.
+    © 2026 Mohd Asri Omar
   </footer>
+
+  <!-- Theme Script -->
+  <script>
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
 
 </body>
 </html>
